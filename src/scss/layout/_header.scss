@@ -5,12 +5,11 @@
 
 .header {
 	background-color: $background-black;
-	background: ;
 	display: flex;
 	border-bottom: 1px solid $border-black;
 	position: relative;
 
-	@media (max-width: 850px) {
+	@media (width <= 850px) {
 		flex-direction: column;
 	}
 
@@ -40,7 +39,7 @@
 		gap: #{fluid(20px, 36px, 800px, 1440px)};
 		padding: 12px;
 
-		@media (max-width: 850px) {
+		@media (width <= 850px) {
 			display: none;
 		}
 	}
@@ -55,7 +54,7 @@
 				display: none;
 			}
 
-			@media (max-width: 850px) {
+			@media (width <= 850px) {
 				display: flex;
 			}
 		}
@@ -64,6 +63,11 @@
 			position: absolute;
 			right: 0;
 			bottom: 0;
+			display: none;
+
+			@media (width <= 850px) {
+				display: block;
+			}
 		}
 	}
 
