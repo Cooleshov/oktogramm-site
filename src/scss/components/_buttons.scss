@@ -2,16 +2,21 @@
 
 .button {
 	border: none;
+	transition: 0.25s;
+	display: flex;
+	align-items: center;
+	border-radius: 28px;
 
 	&-white {
 		&-small {
-			display: flex;
 			padding: 8px 12px;
 			justify-content: center;
-			align-items: center;
-			border-radius: 28px;
 			background-color: #e6e6e6;
 			color: $text-black-100;
+
+			&:hover {
+				background-color: #bfbfbf;
+			}
 		}
 	}
 }

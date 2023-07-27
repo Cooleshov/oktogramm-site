@@ -5,8 +5,10 @@
 
 .header {
 	background-color: $background-black;
+	background: ;
 	display: flex;
 	border-bottom: 1px solid $border-black;
+	position: relative;
 
 	@media (max-width: 850px) {
 		flex-direction: column;
@@ -48,7 +50,6 @@
 			display: none;
 			border-top: 1px solid $border-black;
 			overflow-y: scroll;
-			position: relative;
 
 			&::-webkit-scrollbar {
 				display: none;
@@ -62,7 +63,6 @@
 		&-shadow {
 			position: absolute;
 			right: 0;
-			top: 0;
 			bottom: 0;
 		}
 	}
