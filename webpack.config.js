@@ -18,7 +18,12 @@ module.exports = {
 					process.env.NODE_ENV !== "production"
 						? "style-loader"
 						: MiniCssExtractPlugin.loader,
-					"css-loader",
+					{
+						loader: "css-loader",
+						options: {
+							url: true,
+						},
+					},
 					"sass-loader",
 				],
 			},
@@ -27,8 +32,24 @@ module.exports = {
 				loader: "html-loader",
 			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(jpg|svg|gif)$/,
 				type: "asset/resource",
+			},
+			{
+				test: /\.png/,
+				type: "asset/resource",
+			},
+			{
+				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							name: "[name].[ext]",
+							outputPath: "fonts/",
+						},
+					},
+				],
 			},
 		],
 	},
@@ -47,6 +68,5 @@ module.exports = {
 		hot: false,
 		liveReload: true,
 	},
-	cache: true,
 	mode: "development",
 }
