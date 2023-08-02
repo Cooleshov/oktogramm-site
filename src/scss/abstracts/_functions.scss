@@ -11,8 +11,8 @@
 @function fluid(
 	$min-size,
 	$max-size,
-	$min-breakpoint,
-	$max-breakpoint,
+	$min-breakpoint: var.$default-size-start,
+	$max-breakpoint: var.$default-size-end,
 	$unit: vw
 ) {
 	$slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);

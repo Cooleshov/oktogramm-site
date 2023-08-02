@@ -21,7 +21,7 @@ h1 {
 	font-size: #{fluid(36px, 54px, var.$default-size-start, var.$default-size-end)};
 	line-height: 100%;
 	text-decoration: none;
-	letter-spacing: -2%;
+	letter-spacing: -0.4px;
 }
 
 h2 {
@@ -30,16 +30,16 @@ h2 {
 	font-size: #{fluid(24px, 36px, var.$default-size-start, var.$default-size-end)};
 	line-height: 100%;
 	text-decoration: none;
-	letter-spacing: -2%;
+	letter-spacing: -0.4px;
 }
 
 h3 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(29px, 24px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(20px, 24px, var.$default-size-start, var.$default-size-end)};
 	line-height: 120%;
 	text-decoration: none;
-	letter-spacing: -2%;
+	letter-spacing: -0.4px;
 }
 
 h4 {
@@ -48,7 +48,7 @@ h4 {
 	font-size: #{fluid(18px, 20px, var.$default-size-start, var.$default-size-end)};
 	line-height: 110%;
 	text-decoration: none;
-	letter-spacing: -2%;
+	letter-spacing: -0.4px;
 }
 
 .body-1 {
@@ -57,7 +57,7 @@ h4 {
 	font-size: #{fluid(16px, 18px, var.$default-size-start, var.$default-size-end)};
 	line-height: 140%;
 	text-decoration: none;
-	letter-spacing: -2%;
+	letter-spacing: -0.4px;
 }
 
 .body-2 {
