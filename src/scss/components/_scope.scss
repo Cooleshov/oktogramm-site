@@ -39,9 +39,6 @@
 		flex-direction: column;
 		gap: 12px;
 		padding: #{fluid(12px, 20px, $default-size-start, $default-size-end)};
-
-		& ul {
-		}
 	}
 
 	&__list {

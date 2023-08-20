@@ -1,24 +1,10 @@
 @use "functions" as *;
-@use "variables" as var;
-
-// @font-face {
-// 	font-family: "Roboto Flex";
-// 	src: "../../assets/fonts/RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf";
-// 	font-weight: 400;
-// }
-
-// @font-face {
-// 	font-family: "Roboto Flex";
-// 	src: "../../assets/fonts/RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf";
-// 	font-weight: 500;
-// }
-
 @import "https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500&display=swap";
 
 h1 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(36px, 54px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(36px, 54px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: -0.4px;
@@ -27,7 +13,7 @@ h1 {
 h2 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(24px, 36px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(24px, 36px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: -0.4px;
@@ -36,7 +22,7 @@ h2 {
 h3 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(20px, 24px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(20px, 24px)};
 	line-height: 120%;
 	text-decoration: none;
 	letter-spacing: -0.4px;
@@ -45,7 +31,7 @@ h3 {
 h4 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(18px, 20px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(18px, 20px)};
 	line-height: 110%;
 	text-decoration: none;
 	letter-spacing: -0.4px;
@@ -54,7 +40,7 @@ h4 {
 .body-1 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(16px, 18px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(16px, 18px)};
 	line-height: 140%;
 	text-decoration: none;
 	letter-spacing: -0.4px;
@@ -63,7 +49,7 @@ h4 {
 .body-2 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
-	font-size: #{fluid(14px, 16px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(14px, 16px)};
 	line-height: 150%;
 	text-decoration: none;
 	letter-spacing: normal;
@@ -72,7 +58,7 @@ h4 {
 .headline-1 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
-	font-size: #{fluid(14px, 16px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(14px, 16px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: normal;
@@ -81,7 +67,7 @@ h4 {
 .headline-2 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
-	font-size: #{fluid(12px, 14px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(12px, 14px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: normal;
@@ -90,7 +76,7 @@ h4 {
 .subtitle-medium {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 500;
-	font-size: #{fluid(14px, 16px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(14px, 16px)};
 	line-height: 130%;
 	text-decoration: none;
 	letter-spacing: normal;
@@ -99,7 +85,7 @@ h4 {
 .subtitle-light {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
-	font-size: #{fluid(14px, 16px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(14px, 16px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: normal;
@@ -109,7 +95,7 @@ h4 {
 	font-family: "Roboto Flex", sans-serif;
 	font-weight: 400;
 	font-size: 17px;
-	font-size: #{fluid(14px, 17px, var.$default-size-start, var.$default-size-end)};
+	font-size: #{fluid(14px, 17px)};
 	line-height: 100%;
 	text-decoration: none;
 	letter-spacing: normal;
