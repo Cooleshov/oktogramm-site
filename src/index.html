@@ -17,36 +17,24 @@
 							alt=""
 						/>
 						<nav class="header__desktop-links headline-1">
-							<a href="#" class="header__menu-link">Главная</a>
-							<a href="#" class="header__menu-link">Образование</a>
-							<a href="#" class="header__menu-link">Наставник</a>
-							<a href="#" class="header__menu-link">Нетворкинг</a>
-							<a href="#" class="header__menu-link">Уровни</a>
-							<a href="#" class="header__menu-link">Заявка</a>
+							<a class="header__menu-link">Главная</a>
+							<a class="header__menu-link">Образование</a>
+							<a class="header__menu-link">Наставник</a>
+							<a class="header__menu-link">Нетворкинг</a>
+							<a class="header__menu-link">Уровни</a>
+							<a class="header__menu-link">Заявка</a>
 						</nav>
 					</div>
 					<button class="button button-white-small headline-1">Вступить</button>
 				</div>
 			</div>
 			<div class="header__mobile-links headline-1">
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Главная</a
-				>
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Образование</a
-				>
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Наставник</a
-				>
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Нетворкинг</a
-				>
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Уровни</a
-				>
-				<a href="#" class="header__menu-link header__menu-link--mobile"
-					>Заявка</a
-				>
+				<a class="header__menu-link header__menu-link--mobile">Главная</a>
+				<a class="header__menu-link header__menu-link--mobile">Образование</a>
+				<a class="header__menu-link header__menu-link--mobile">Наставник</a>
+				<a class="header__menu-link header__menu-link--mobile">Нетворкинг</a>
+				<a class="header__menu-link header__menu-link--mobile">Уровни</a>
+				<a class="header__menu-link header__menu-link--mobile">Заявка</a>
 			</div>
 			<img
 				class="header__mobile-shadow"
@@ -54,10 +42,29 @@
 				alt=""
 			/>
 		</header>
-		<section class="heroblock">
-			<div class="heroblock__container"></div>
+		<section class="heroblock" id="heroblock">
+			<video autoplay muted loop id="myVideo" class="heroblock__video">
+				<source src="./assets/video/heroblock.mp4" type="video/mp4" />
+			</video>
+			<div class="heroblock__container">
+				<div class="heroblock__main-text">
+					<h1 class="heroblock__text text-white-100">создаём сообщество</h1>
+					<div class="heroblock__second-line">
+						<img
+							class="heroblock__arrow"
+							src="./assets/images/heroblock/arrow.png"
+							alt=""
+						/>
+						<h1 class="heroblock__text text-white-100">продвинутых людей</h1>
+					</div>
+				</div>
+				<div class="heroblock__about">
+					<img src="./assets/images/heroblock/elipse.svg" alt="" />
+					<p class="body-2 text-white-60">— узнать больше</p>
+				</div>
+			</div>
 		</section>
-		<section class="education">
+		<section class="education" id="education">
 			<div class="education__container">
 				<div class="header-text">
 					<div class="header-text__top">
@@ -291,7 +298,7 @@
 			</div>
 		</section>
 
-		<section class="mentor">
+		<section class="mentor" id="mentor">
 			<div class="mentor__container">
 				<div class="header-text">
 					<div class="header-text__top">
@@ -335,7 +342,7 @@
 			</div>
 		</section>
 
-		<section class="networking">
+		<section class="networking" id="networking">
 			<div class="networking__header-container">
 				<div class="header-text networking__header">
 					<div class="header-text__top">
@@ -397,7 +404,7 @@
 			</div>
 		</section>
 
-		<section class="levels-system">
+		<section class="levels-system" id="levels-system">
 			<div class="levels-system__container">
 				<div class="header-text">
 					<div class="header-text__top">
@@ -640,7 +647,7 @@
 			</div>
 		</section>
 
-		<section class="rating-system">
+		<section class="rating-system" id="raiting-system">
 			<div class="rating-system__container">
 				<div class="rating-system__header">
 					<p class="brand-orange hairline-1">Рейтинговая система</p>
@@ -930,7 +937,7 @@
 			</div>
 		</section>
 
-		<section class="request">
+		<section class="request" id="request">
 			<div class="request__header-container">
 				<div class="header-text">
 					<div class="header-text__top">
@@ -1254,20 +1261,12 @@
 						class="footer__logo"
 					/>
 					<nav class="footer__links">
-						<a href="#" class="footer__link headline-1 text-white-80"
-							>Главная</a
-						>
-						<a href="#" class="footer__link headline-1 text-white-80"
-							>Образование</a
-						>
-						<a href="#" class="footer__link headline-1 text-white-80"
-							>Наставник</a
-						>
-						<a href="#" class="footer__link headline-1 text-white-80"
-							>Нетворкинг</a
-						>
-						<a href="#" class="footer__link headline-1 text-white-80">Уровни</a>
-						<a href="#" class="footer__link headline-1 text-white-80">Заявка</a>
+						<a class="footer__link headline-1 text-white-80">Главная</a>
+						<a class="footer__link headline-1 text-white-80">Образование</a>
+						<a class="footer__link headline-1 text-white-80">Наставник</a>
+						<a class="footer__link headline-1 text-white-80">Нетворкинг</a>
+						<a class="footer__link headline-1 text-white-80">Уровни</a>
+						<a class="footer__link headline-1 text-white-80">Заявка</a>
 					</nav>
 				</div>
 				<div class="footer__divider"></div>

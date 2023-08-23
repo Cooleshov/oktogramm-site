@@ -112,12 +112,15 @@ function toggleBlack(reverse, changePage) {
 	}
 }
 
+let animation = false
 // - Перелистывание страничек
 function togglePage(reverse = false) {
 	let durationTime
 	if (!canTogglePage(reverse)) {
 		return
 	}
+
+	animation = true
 
 	if ((!reverse && activePage === 4) || (reverse && activePage === 5)) {
 		durationTime = 0.4
@@ -141,6 +144,7 @@ function togglePage(reverse = false) {
 	} else if (reverse && activePage === 5) {
 		toggleBlack(true, changePage)
 	}
+	changePage.eventCallback("onComplete", toggleAnimation)
 
 	toggleDash(reverse)
 
@@ -148,17 +152,29 @@ function togglePage(reverse = false) {
 
 	toggleButton(reverse)
 	levels.counter[0].innerText = activePage + 1 + "/6"
+
+	function toggleAnimation() {
+		animation = false
+	}
 }
 
 // - Слушатели событий по нажатию кнопки
 document
 	.querySelector(".rating-system__button-next")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage()
 	})
 
 document
 	.querySelector(".rating-system__button-before")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage(true)
 	})

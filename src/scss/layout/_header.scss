@@ -6,7 +6,11 @@
 	background-color: $background-black;
 	display: flex;
 	border-bottom: 1px solid $border-black;
-	position: relative;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1000;
 
 	@media (width <= 850px) {
 		flex-direction: column;

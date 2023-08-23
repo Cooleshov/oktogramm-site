@@ -147,15 +147,18 @@ function toggleButton(buttons, color) {
 	}
 }
 
+let animation = false
 /**
  * Основная функция, контролирующая переворот страничек у блоков.
  * @param {string} color - Цвет блока, с которым взаимодействует пользователь. Может быть black и white.
  * @param {boolean} reverse - Направление движения.
  */
-function togglePage(color, reverse = false) {
+async function togglePage(color, reverse = false) {
 	if (!canTogglePage(color, reverse)) {
 		return
 	}
+
+	animation = true
 
 	let step = reverse ? -1 : 1
 	let mainSelector = ".levels-system__sector-column--" + color
@@ -177,33 +180,55 @@ function togglePage(color, reverse = false) {
 		})
 
 	timeline.play()
+	timeline.eventCallback("onComplete", toggleAnimation)
+
 	toggleDash(dash, reverse, color)
 
 	color === "white" ? (sectorPage.white += step) : (sectorPage.black += step)
 
 	toggleButton(button, color)
+
+	function toggleAnimation() {
+		animation = false
+	}
 }
 
 /** Обработчики событий для кнопок переворота страниц. */
 document
 	.querySelector("#levels-system__button-before--white")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage("white", true)
 	})
 
 document
 	.querySelector("#levels-system__button-next--white")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage("white")
 	})
 
 document
 	.querySelector("#levels-system__button-before--black")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage("black", true)
 	})
 document
 	.querySelector("#levels-system__button-next--black")
 	.addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		togglePage("black")
 	})
