@@ -1,6 +1,5 @@
 import "./scss/style.scss"
 import "./index.html"
-import { gsap } from "gsap"
 
 import "./js/heroblock"
 import "./js/scope"

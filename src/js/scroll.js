@@ -48,3 +48,12 @@ for (const key in links) {
 		})
 	}
 }
+
+document
+	.querySelector(".header__submit-button")
+	.addEventListener("click", () => {
+		gsap.to(window, {
+			duration: 1,
+			scrollTo: { y: "#request", offsetY: offset },
+		})
+	})
