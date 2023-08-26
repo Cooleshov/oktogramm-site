@@ -75,6 +75,7 @@ function changeLeft(step) {
 		)
 
 	leftAnimation.play()
+	leftAnimation.eventCallback("onComplete", toggleAnimation)
 
 	if (step === -2) {
 		gsap.to(
@@ -88,12 +89,20 @@ function changeLeft(step) {
 	}
 }
 
+let animation = false
+
+/** Отключение возможности нажимать кнопку во время анимации. */
+function toggleAnimation() {
+	animation = false
+}
+
 /**
  * Одновременная смена левой и правой стороны заявки. В этой функции происходит вычисление шага - step.
  * @param {boolean} reverse - Направление движения вперед или назад.
  */
 function changePage(reverse) {
 	let step = reverse ? -1 : 1
+	animation = true
 
 	if (!reverse && requestPage === 2) {
 		step = -2
@@ -255,6 +264,10 @@ for (let index = 0; index < socialButtons.length; index++) {
 	let selectedSocial = socialButtons[index]
 
 	request.socialMedia[index].addEventListener("click", () => {
+		if (animation) {
+			return
+		}
+
 		changeInput(selectedSocial)
 		changePage(false)
 	})
@@ -262,6 +275,10 @@ for (let index = 0; index < socialButtons.length; index++) {
 
 for (const button of request.beforeButton) {
 	button.addEventListener("click", function () {
+		if (animation) {
+			return
+		}
+
 		changePage(true)
 	})
 }
@@ -271,6 +288,10 @@ for (const button of request.afterButton) {
 		let submitButton = request.afterButton[0]
 
 		if (!submitButton.classList.contains("request__button--after--disabled")) {
+			if (animation) {
+				return
+			}
+
 			changeResultData()
 			changePage(false)
 		}
