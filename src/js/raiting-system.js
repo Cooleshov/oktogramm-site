@@ -5,12 +5,12 @@ import buttonBeforeDisabled from "../assets/images/levels-system/before-disabled
 import buttonNext from "../assets/images/levels-system/next-black.svg"
 import buttonNextBlackDisabled from "../assets/images/levels-system/next-black-disabled.svg"
 
-// Система уровней
-
+/** Хранение активной страницы. */
 let activePage = 0
 let step = 0
 let mainSelector = ".rating-system__container"
 
+/** Список всех использующихся селекторов. */
 let selectors = {
 	levelPage: mainSelector + " .rating-system__main-text",
 	dash: mainSelector + " .rating-system__bar",
@@ -25,12 +25,18 @@ let selectors = {
 
 let levels = {}
 
-// - Преобразование селекторов в рабочие элементы
+/**  Преобразование селекторов в рабочие eлементы */
 for (const key in selectors) {
 	levels[key] = document.querySelectorAll(selectors[key])
 }
 
 // - Ограничения на прокрутку страниц
+/**
+ * Ограничение на прокрутки страниц.
+ * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
+ * @returns {boolean} Результат проверки. Если дальше можно листать, то true,
+ * если дальше страниц нет, то false.
+ */
 function canTogglePage(reverse) {
 	let result = true
 
@@ -43,7 +49,10 @@ function canTogglePage(reverse) {
 	return result
 }
 
-// - Переключение индикаторов текущей страницы
+/**
+ * Переключение индикаторов текущей/активной страницы.
+ * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
+ */
 function toggleDash(reverse) {
 	if (!reverse) {
 		gsap.to(levels.dash[activePage + 1], {
@@ -58,7 +67,13 @@ function toggleDash(reverse) {
 	}
 }
 
-// - Плавное изменение иконок у кнопок
+/**
+ * Плавное изменение иконок у кнопок.
+ * @param {object} buttonImage Объект с кнопкой. Используется для изменения
+ * иконки в разных состояниях.
+ * @param {*} image Ссылка на новую иконку.
+ * @param {*} duration Время анимации изменения иконки.
+ */
 async function changeButtonImage(buttonImage, image, duration) {
 	let timeline = gsap
 		.timeline({ paused: true })
@@ -68,7 +83,11 @@ async function changeButtonImage(buttonImage, image, duration) {
 	timeline.play()
 }
 
-// - Переключение кнопки назад
+/**
+ * Переключение состояния у кнопок - активна/отключена.
+ * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
+ * @returns
+ */
 function toggleButton(reverse) {
 	let buttonImageBefore = levels.button[0].querySelector("img")
 	let buttonImageNext = levels.button[1].querySelector("img")
@@ -92,7 +111,7 @@ function toggleButton(reverse) {
 	}
 }
 
-// - Анимация для переключения на чёный сектор
+/** Анимация для переключения на чёный сектор. */
 const levelsBlack = gsap
 	.timeline({ paused: true })
 	.to(levels.background, { duration: 0.125, background: "#080808" }, "<")
@@ -103,8 +122,11 @@ const levelsBlack = gsap
 	.to(levels.counter, { duration: 0.125, color: "#FFF" }, "<")
 	.to(levels.blackButton, { duration: 0.125, right: 0, autoAlpha: 1 }, "+0.15")
 
-// - Функция переключения на чёрный сектор
-function toggleBlack(reverse, changePage) {
+/**
+ * Функция переключения на чёрный сектор (последняя страница).
+ * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
+ */
+function toggleBlack(reverse) {
 	if (!reverse) {
 		levelsBlack.play()
 	} else {
@@ -113,7 +135,11 @@ function toggleBlack(reverse, changePage) {
 }
 
 let animation = false
-// - Перелистывание страничек
+
+/**
+ * Основная функция, управляющая перелистыванием страниц.
+ * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
+ */
 function togglePage(reverse = false) {
 	let durationTime
 	if (!canTogglePage(reverse)) {
@@ -158,7 +184,7 @@ function togglePage(reverse = false) {
 	}
 }
 
-// - Слушатели событий по нажатию кнопки
+/** Слушатели событий по нажатию кнопки. */
 document
 	.querySelector(".rating-system__button-next")
 	.addEventListener("click", () => {

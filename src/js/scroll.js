@@ -3,6 +3,12 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 gsap.registerPlugin(ScrollToPlugin)
 
+/**
+ * У верхнего меню стоит display: fixed;, поэтому надо учитывать его высоту при
+ * скролле. На мобильной и десктопной версии высота разная, поэтому необходимо
+ * её посчитать.
+ * @returns Высота header для правильного скролла.
+ */
 let offset
 function checkWindowWidth() {
 	if (window.innerWidth < 850) {
@@ -13,8 +19,10 @@ function checkWindowWidth() {
 	return offset
 }
 
+/** Запуск функции просчёта при загрузке страницы. */
 checkWindowWidth()
 
+/** Список секций сайта. */
 let sections = [
 	"#heroblock",
 	"#education",
@@ -24,6 +32,7 @@ let sections = [
 	"#request",
 ]
 
+/** Все кнопки, по нажатию на уоторые будет скролл. */
 let selectors = {
 	header: ".header__desktop-links a",
 	headerMobile: ".header__mobile-links a",
@@ -32,11 +41,12 @@ let selectors = {
 
 let links = {}
 
-/** Преобразование селекторов в рабочие элементы */
+/** Преобразование селекторов в рабочие элементы. */
 for (const key in selectors) {
 	links[key] = document.querySelectorAll(selectors[key])
 }
 
+/** Создание слушателя события для каждой кнопки. */
 for (const key in links) {
 	for (let i = 0; i < links[key].length; i++) {
 		let button = links[key][i]
@@ -49,6 +59,7 @@ for (const key in links) {
 	}
 }
 
+/** Слушатель собития для кнопки "Вступить" на главном меню. */
 document
 	.querySelector(".header__submit-button")
 	.addEventListener("click", () => {
