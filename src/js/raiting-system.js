@@ -117,8 +117,8 @@ const levelsBlack = gsap
 	.to(levels.background, { duration: 0.125, background: "#080808" }, "<")
 	.to(levels.headerText, { duration: 0.125, color: "#FFF" }, "<")
 	.to(levels.divider, { duration: 0.125, background: "#373737" }, "<")
-	.to(levels.button[0], { duration: 0.125, background: "#262626" }, "<")
 	.to(levels.button[1], { duration: 0.125, background: "#262626" }, "<")
+	.to(levels.button[0], { duration: 0.125, background: "#262626" }, "<")
 	.to(levels.counter, { duration: 0.125, color: "#FFF" }, "<")
 	.to(levels.blackButton, { duration: 0.125, right: 0, autoAlpha: 1 }, "+0.15")
 
@@ -134,13 +134,38 @@ function toggleBlack(reverse) {
 	}
 }
 
+/**
+ * Возврат к первой странице при нажатии на кнопку "Вернуться в начало".
+ */
+function returnToFirstPage() {
+	let buttonImageBefore = levels.button[0].querySelector("img")
+	let buttonImageNext = levels.button[1].querySelector("img")
+
+	togglePage(true, true)
+
+	for (let i = 1; i < 5; i++) {
+		gsap.to(levels.dash[i], {
+			duration: 0.3,
+			backgroundColor: "#dddddf",
+		})
+	}
+
+	changeButtonImage(buttonImageNext, buttonNextBlackDisabled, 0.4)
+	changeButtonImage(buttonImageBefore, buttonBeforeDisabled, 0.4)
+}
+
 let animation = false
+
+/** Отключение возможности нажимать кнопку во время анимации. */
+function toggleAnimation() {
+	animation = false
+}
 
 /**
  * Основная функция, управляющая перелистыванием страниц.
  * @param {boolean} reverse Прокручивается ли страница назад. Если вперёд, то false.
  */
-function togglePage(reverse = false) {
+function togglePage(reverse = false, toFirst = false) {
 	let durationTime
 	if (!canTogglePage(reverse)) {
 		return
@@ -154,7 +179,11 @@ function togglePage(reverse = false) {
 		durationTime = 0.125
 	}
 
-	step = reverse ? -1 : 1
+	if (!toFirst) {
+		step = reverse ? -1 : 1
+	} else {
+		step = -5
+	}
 
 	const changePage = gsap
 		.timeline({ paused: true })
@@ -165,6 +194,7 @@ function togglePage(reverse = false) {
 		})
 
 	changePage.play()
+
 	if (!reverse && activePage === 4) {
 		toggleBlack(false, changePage)
 	} else if (reverse && activePage === 5) {
@@ -178,10 +208,6 @@ function togglePage(reverse = false) {
 
 	toggleButton(reverse)
 	levels.counter[0].innerText = activePage + 1 + "/6"
-
-	function toggleAnimation() {
-		animation = false
-	}
 }
 
 /** Слушатели событий по нажатию кнопки. */
@@ -203,4 +229,11 @@ document
 		}
 
 		togglePage(true)
+	})
+
+/** Слушатель события для кнопки "Вернуться в начало". */
+document
+	.querySelector(".rating-system__black-button")
+	.addEventListener("click", () => {
+		returnToFirstPage()
 	})
