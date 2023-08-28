@@ -117,10 +117,10 @@ const levelsBlack = gsap
 	.to(levels.background, { duration: 0.125, background: "#080808" }, "<")
 	.to(levels.headerText, { duration: 0.125, color: "#FFF" }, "<")
 	.to(levels.divider, { duration: 0.125, background: "#373737" }, "<")
-	.to(levels.button[1], { duration: 0.125, background: "#262626" }, "<")
-	.to(levels.button[0], { duration: 0.125, background: "#262626" }, "<")
 	.to(levels.counter, { duration: 0.125, color: "#FFF" }, "<")
-	.to(levels.blackButton, { duration: 0.125, right: 0, autoAlpha: 1 }, "+0.15")
+	.to(levels.button[0], { duration: 0.2, background: "#262626" }, "<")
+	.to(levels.button[1], { duration: 0.2, background: "#262626" }, "<")
+	.to(levels.blackButton, { duration: 0.125, right: 0, autoAlpha: 1 }, 0.15)
 
 /**
  * Функция переключения на чёрный сектор (последняя страница).
@@ -129,6 +129,7 @@ const levelsBlack = gsap
 function toggleBlack(reverse) {
 	if (!reverse) {
 		levelsBlack.play()
+		console.log(levels.button)
 	} else {
 		levelsBlack.reverse()
 	}
