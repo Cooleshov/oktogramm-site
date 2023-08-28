@@ -8,6 +8,7 @@ module.exports = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "main.js",
 		clean: true,
+		assetModuleFilename: "assets/[name][ext]",
 	},
 	module: {
 		rules: [
@@ -32,12 +33,25 @@ module.exports = {
 				loader: "html-loader",
 			},
 			{
-				test: /\.(jpg|svg|gif)$/,
+				test: /\.(jpg|png|gif)$/,
 				type: "asset/resource",
+				generator: {
+					filename: "assets/images/[name][ext]",
+				},
 			},
 			{
-				test: /\.png/,
+				test: /\.svg/,
 				type: "asset/resource",
+				generator: {
+					filename: "assets/svg/[name][ext]",
+				},
+			},
+			{
+				test: /\.mp4/,
+				type: "asset/resource",
+				generator: {
+					filename: "assets/videos/[name][ext]",
+				},
 			},
 			{
 				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -68,5 +82,5 @@ module.exports = {
 		hot: false,
 		liveReload: true,
 	},
-	mode: "development",
+	mode: "production",
 }

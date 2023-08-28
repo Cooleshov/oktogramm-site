@@ -33,7 +33,6 @@
 		"stylelint-selector-bem-pattern": "^3.0.0"
 	},
 	"dependencies": {
-		"gsap": "^3.12.2",
-		"just-validate": "^4.2.0"
+		"gsap": "^3.12.2"
 	}
 }
