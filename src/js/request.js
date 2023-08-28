@@ -135,7 +135,6 @@ let nowSelectedSocial
  * @param {string} selectedSocial - Выбранная социальная сеть.
  */
 function changeInput(selectedSocial) {
-	let [firstInput, secondInput, thirdInput] = request.input
 	let inputText = request.inputText[0]
 	let inputField = request.inputField[0]
 	inputToDefault()
