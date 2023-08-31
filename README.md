@@ -1,7 +1,7 @@
 # Oktogramm Landing
 Hello, this is a fairly simple landing page. Initially, it was developed for the practice of adaptive layout (in particular, testing the _clamp()_ property). But I liked it so much that I decided to make a project out of it.
 
-I always strive to create something unique and innovative. I love experimenting with new technologies and keeping abreast of the latest trends in the tech world.
+I’m always striving to create something unique and innovative. I love experimenting with new technologies and staying up-to-date with the latest trends in the tech world.
 
 
 ## Tech Stack
