@@ -20,25 +20,25 @@ I’m always striving to create something unique and innovative. I love experime
 Clone the project.
 
 ```bash
-  git clone https://github.com/Cooleshov/oktogramm-site
+git clone https://github.com/Cooleshov/oktogramm-site
 ```
 
 Go to the project directory.
 
 ```bash
-  cd oktogramm-site
+cd oktogramm-site
 ```
 
 Install dependencies.
 
 ```bash
-  npm install
+npm install
 ```
 
 Start the server.
 
 ```bash
-  npm run start
+npm run start
 ```
 
 ## Contributing & Usage
