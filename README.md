@@ -14,7 +14,8 @@ I’m always striving to create something unique and innovative. I love experime
   - EsLint
 
 ## Screenshots & Demo
-[Some screenshots and link to demo]
+**Demo:** Link
+![Site screenshot](https://i.imgur.com/UzHKqEL.png)
 
 ## Run Locally
 Clone the project.
