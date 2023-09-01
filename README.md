@@ -4,7 +4,7 @@ Hello, this is a fairly simple landing page. Initially, it was developed for the
 I’m always striving to create something unique and innovative. I love experimenting with new technologies and staying up-to-date with the latest trends in the tech world.
 
 
-## Tech Stack
+## 📟 Tech Stack
 - **Html, Scss.** Layout.
 - **Js.** Basic logic.
 - **GSAP.** Animations.
@@ -13,12 +13,12 @@ I’m always striving to create something unique and innovative. I love experime
   - StyleLint
   - EsLint
 
-## Screenshots & Demo
+## 🎬 Screenshots & Demo
 **Demo:** [Link](https://cooleshov.github.io/oktogramm/)
 
 ![Site screenshot](https://i.imgur.com/UzHKqEL.png)
 
-## Run Locally
+## ⚒️ Run Locally
 Clone the project.
 
 ```bash
@@ -43,12 +43,12 @@ Start the server.
 npm run start
 ```
 
-## Contributing & Usage
+## 🫶 Contributing & Usage
 This project is open source and you can use the code or parts of it for your website. I recommend that you change the theme and components to make them your own. However, please do not claim any of the projects featured on this site as your own.
 
 If you use the site design with little or no modification, credit me as the site designer.
 
 If you have any questions or doubts, write to me at [Telegram](https://t.me/coo1eshov). **I'm always happy to help!**
 
-## License
+## 🗿 License
 [MIT](https://choosealicense.com/licenses/mit/)
