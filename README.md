@@ -14,7 +14,7 @@ I’m always striving to create something unique and innovative. I love experime
   - EsLint
 
 ## Screenshots & Demo
-**Demo:** Link
+**Demo:** [Link](https://cooleshov.github.io/oktogramm/)
 
 ![Site screenshot](https://i.imgur.com/UzHKqEL.png)
 
