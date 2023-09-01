@@ -33,7 +33,7 @@ module.exports = {
 				loader: "html-loader",
 			},
 			{
-				test: /\.(jpg|png|gif)$/,
+				test: /\.(jpg|png|gif|ico)$/,
 				type: "asset/resource",
 				generator: {
 					filename: "assets/images/[name][ext]",
